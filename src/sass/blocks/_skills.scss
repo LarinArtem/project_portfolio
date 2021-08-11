@@ -17,13 +17,13 @@
         margin-top: 60px;
         padding: 0 10px;
         display: grid;
-        grid-template-columns: repeat(4, minmax(270px, auto));
+        grid-template-columns: repeat(4, 270px);
         grid-template-rows: repeat(2, minmax(270px, auto));
         grid-auto-rows: minmax(270px, auto);
         gap: 13px;
     }
     &__item{
-        padding: 30px 30px 25px 30px ;
+        padding: 30px 30px 25px 30px;
         border: 2px solid black;
         &-title{
             margin-top: 20px;
@@ -37,7 +37,7 @@
         }
         &-img{
             display: flex;
-            max-width: 160px;
+            max-width: 100%;
             align-items: center;
             min-height: 65px; 
         }

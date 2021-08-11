@@ -109,7 +109,20 @@
             <div class="container">
                 <div class="myself__wrapper">
                     <div class="myself__img">
-                        <img src="img/main_photo.jpg" alt="person">
+                        <!-- <img srcset="img/main_photo-min.jpg 300w, img/main_photo.jpg 400w" sizes="(max-width: 576px) 280px, (min-width: 577px) 400px"
+                        src="img/main_photo.jpg" alt="person"> -->
+
+                        <picture>
+                            <source media="(max-width: 576px)" srcset="img/main_photo-min.jpg">
+                            <source media="(min-width: 577px)" srcset="img/main_photo.jpg">
+                            <img src="img/main_photo.jpg" alt="photo">
+                        </picture>
+
+                        <!-- <picture>
+                            <source type="image/webp" srcset="img/main_photo-min.webp">
+                            <source media="(min-width: 577px)" srcset="img/main_photo.jpg">
+                            <img src="img/main_photo.jpg" alt="photo">
+                        </picture> -->
                     </div>
 
                     <div class="myself__descr">
@@ -415,11 +428,11 @@
 
                     <form action="#" class="contact__form">
                         <div class="contact__input">
-                            <input name="name" id="name" type="text">
+                            <input required name="name" id="name" type="text">
                             <label for="name">Ваше имя</label>
                         </div>
                         <div class="contact__input">
-                            <input name="email" id="email" type="email">
+                            <input required name="email" id="email" type="email">
                             <label for="email">Ваша почта</label>
                         </div>
                         <div class="contact__textarea">
@@ -427,8 +440,12 @@
                             <label for="text">Ваше сообщение</label>
                         </div>
 
-                        <div>
+                        <div class="contact__triggers">
                             <button class="contact__button btn">Отправить сообщение</button>
+                            <div class="contact__policy">
+                                <input required type="checkbox">
+                                <span>Я согласен(а) с <a href="/policy.html">политикой конфиденциальности</a></span>
+                            </div>
                         </div>
 
                     </form>
